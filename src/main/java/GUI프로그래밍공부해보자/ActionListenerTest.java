@@ -18,7 +18,7 @@ class JButtonTest3  implements ActionListener { //이벤트 리스너는 static�
 
         JFrame jf = new JFrame();
         jf.setSize(300, 300);
-        jf.setTitle("JButton");
+        jf.setTitle("What you want Number?");
         jf.setLayout(null);
 
         String[] name = {"1번", "2번", "3번"};
