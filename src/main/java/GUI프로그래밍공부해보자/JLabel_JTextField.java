@@ -34,6 +34,7 @@ public class JLabel_JTextField {
         jt.setSize(130,30);
         jt.setLocation(110,70);
         jf.add(jt);
+        jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         jf.setVisible(true);    //이것은 항상 마지막에 넣어야한다.중간에 넣을경우 거기까지 구현하겠다.라는 뜻이 된다.
     }

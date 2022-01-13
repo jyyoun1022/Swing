@@ -18,6 +18,7 @@ public class Class2 {
     JTextField jt = new JTextField("Password : ");
     jt.setBounds(10,50,150,60);
     jf.add(jt);
+    jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jf.setVisible(true);
 
         jb.addActionListener(new ActionListener() {

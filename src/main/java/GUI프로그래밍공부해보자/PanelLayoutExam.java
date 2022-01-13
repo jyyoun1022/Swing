@@ -25,7 +25,7 @@ public class PanelLayoutExam extends JFrame {
         // JFrame에 컴포넌트 추가
         add(jpn, "North");
         add(btn1, "West");
-        add(btn2, "Center");
+        add(btn2, "East");
 
         // 크기
         setSize(300, 200);
