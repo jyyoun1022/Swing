@@ -10,5 +10,6 @@ public class JFrameTest extends JFrame{
         jf.setTitle("내 첫 프레임"); //jf의 제목을 "내 첫 프레임"으로 설정한다.
         jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  //닫기 버튼을 눌렀을 때 동작 설정(프로그램을 아예 나가도록 설정한다.)
         jf.setVisible(true);    //jf프레임이 보이도록 설정
+
     }
 }
