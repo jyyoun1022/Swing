@@ -11,13 +11,6 @@ public class Calculator extends JFrame {
     private ArrayList<String> equation = new ArrayList<String>();   //계산기능을 구현하기 위해 ArrayList에 숫자와 연산 기호를 하나씩 구분에 담아주기
     private String num ="";
 
-    public JTextField getInputSpace() {
-        return inputSpace;
-    }
-
-    public void setInputSpace(JTextField inputSpace) {
-        this.inputSpace = inputSpace;
-    }
 
     public Calculator() {
         setLayout(null);    //배치 관리자 별도로 사용하지 않을거에요.
@@ -38,23 +31,6 @@ public class Calculator extends JFrame {
 
         for (int i = 0; i < buttonOrder.length; i++) {
             buttons[i] = new JButton(buttonOrder[i]);
-            buttons[i].setFont(new Font("ITALIC", Font.BOLD, 25));
-
-            if (buttonOrder[i] == "C") {
-                buttons[i].setBackground(new Color(0xFF9300));
-                buttons[i].setOpaque(true);
-            } else if ((i >= 4 && i <= 6) || (i >= 8 && i <= 10) || (i >= 12 && i <= 14)) {
-                buttons[i].setBackground(Color.black);
-                buttons[i].setOpaque(true);
-            } else {
-                buttons[i].setBackground(Color.gray);
-                buttons[i].setOpaque(true);
-            }
-
-            buttons[i].setForeground(Color.white);
-            buttons[i].setOpaque(true);   //텍스트 색
-            buttons[i].setBorderPainted(false);
-            buttons[i].setOpaque(true);
             buttons[i].addActionListener(new PadActionListener());
 
             buttonPanel.add(buttons[i]); //buttonPanel에 buttons 배열 넣기
@@ -96,7 +72,7 @@ public class Calculator extends JFrame {
             if (ch == '-' | ch == '+' | ch == 'x' | ch == '/') {
                 equation.add(num);
                 num = "";   //num을 초기화
-                equation.add(ch + ""); //사칙연산기호를 ArrayList에 추가.
+                equation.add( ch +""); //사칙연산기호를 ArrayList에 추가.
             } else {
                 num = num + ch; //숫자일 경우에는 num 에 더해주기.
             }
