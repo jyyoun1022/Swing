@@ -27,7 +27,7 @@ public class Calculator extends JFrame {
         buttonPanel.setBounds(0, 100, 300, 280);
 
         String[] buttonOrder = {"C", "/", "x", "=", "7", "8", "9", "+", "4", "5", "6", "-", "1", "2", "3", "0"};
-        JButton[] buttons = new JButton[buttonOrder.length];
+        JButton[] buttons = new JButton[buttonOrder.length];    //buttonOrder에 있는 값들의 수를 JButton배열의 수
 
         for (int i = 0; i < buttonOrder.length; i++) {
             buttons[i] = new JButton(buttonOrder[i]);
@@ -49,15 +49,15 @@ public class Calculator extends JFrame {
         class PadActionListener implements ActionListener{//만든 버튼에 액션 리스너를 붙여서 기능 추가하기
             @Override
             public void actionPerformed(ActionEvent e) {
-                String operation =e.getActionCommand(); //어떤 버튼이 눌렸는지 확인
+                String whichButton =e.getActionCommand(); //어떤 버튼이 눌렸는지 확인
 
-                if(operation.equals("C")){
-                    inputSpace.setText(""); //"C"를 눌렀을 때 초기화시키기
-                }else if(operation.equals("=")){    //계산값이 나오도록 해주기
+                if(whichButton.equals("C")){
+                    inputSpace.setText(""); //만약 Buttons[i]에서 "C"를 눌렀을 때 JTextField 초기화시키기
+                }else if(whichButton.equals("=")){    //만약 "="이 눌렸을때 계산값이 나오도록 해주기
                     String result = Double.toString(calculate(inputSpace.getText()));
                     inputSpace.setText("" + result);
                     num ="";
-                }else{
+                }else{  //"C","=" 이외의 가 눌렷을떄는 계산식에 추가되도록 하기
                     inputSpace.setText(inputSpace.getText()+e.getActionCommand());  //나머지 버튼을 눌렀을 때 계산식에 추가되도록 하기(이벤트를 발생시킨 객체의 문자열을 가져온다 )
                 }
             }
@@ -69,7 +69,7 @@ public class Calculator extends JFrame {
         for (int i = 0; i < inputText.length(); i++) {
             char ch = inputText.charAt(i);
 
-            if (ch == '-' | ch == '+' | ch == 'x' | ch == '/') {
+            if (ch == '-' | ch == '+' | ch == 'x' | ch == '/') {    //만약 텍스트필드에 사칙연산이 나올경우에
                 equation.add(num);
                 num = "";   //num을 초기화
                 equation.add( ch +""); //사칙연산기호를 ArrayList에 추가.
